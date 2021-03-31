@@ -1,28 +1,12 @@
 #include "DualG2HighPowerMotorShield.h"
 
 // Uncomment the version corresponding with the version of your shield.
-DualG2HighPowerMotorShield24v14 md;
+//DualG2HighPowerMotorShield24v14 md;
 // DualG2HighPowerMotorShield18v18 md;
-// DualG2HighPowerMotorShield24v18 md;
+ DualG2HighPowerMotorShield24v18 md;
 // DualG2HighPowerMotorShield18v22 md;
 
-void stopIfFault()
-{
-  if (md.getM1Fault())
-  {
-    md.disableDrivers();
-	delay(1);
-    Serial.println("M1 fault");
-    while (1);
-  }
-  if (md.getM2Fault())
-  {
-    md.disableDrivers();
-	delay(1);
-    Serial.println("M2 fault");
-    while (1);
-  }
-}
+
 
 void setup()
 {
