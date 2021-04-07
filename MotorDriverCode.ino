@@ -10,10 +10,10 @@
 
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(115200);  //This allows us to use the serial monitor
   Serial.println("Dual G2 High Power Motor Shield");
-  md.init();
-  md.calibrateCurrentOffsets();
+  md.init(); //Method that initializes the pinmodes for all the pins listed in document 4b.
+  md.calibrateCurrentOffsets(); //Sets the voltage offset of M1 current reading at 0 speed
 
   delay(10);
 
@@ -24,13 +24,13 @@ void setup()
 
 void loop()
 {
-  md.enableDrivers();
+  md.enableDrivers(); //enables the MOSFET drivers for  both M1 and M2
   delay(1);  // The drivers require a maximum of 1ms to elapse when brought out of sleep mode.
 
   for (int i = 0; i <= 400; i++)
   {
-    md.setM1Speed(i);
-    stopIfFault();
+    md.setM1Speed(i); // Set speed for motor 1, speed is a number betwenn -400 and 400
+   // stopIfFault();
     if (i%200 == 100)
     {
       Serial.print("M1 current: ");
@@ -41,7 +41,7 @@ void loop()
 
   for (int i = 400; i >= -400; i--)
   {
-    md.setM1Speed(i);
+    md.setM1Speed(i); 
     stopIfFault();
     if (i%200 == 100)
     {
