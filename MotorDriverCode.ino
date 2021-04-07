@@ -33,6 +33,8 @@ void loop()
    
     if (i%200 == 100)
     {
+      serial.print("Current Speed: ");
+      serial.println(i);
       Serial.print("M1 current: ");
       Serial.println(md.getM1CurrentMilliamps());
 	}
@@ -45,6 +47,8 @@ void loop()
     
     if (i%200 == 100)
     {
+      serial.print("Current Speed: ");
+      serial.println(i);
       Serial.print("M1 current: ");
       Serial.println(md.getM1CurrentMilliamps());
 	}
@@ -57,6 +61,8 @@ void loop()
     
     if (i%200 == 100)
     {
+      serial.print("Current Speed: ");
+      serial.println(i);
       Serial.print("M1 current: ");
       Serial.println(md.getM1CurrentMilliamps());
 	}
