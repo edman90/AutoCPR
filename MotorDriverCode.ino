@@ -30,7 +30,7 @@ void loop()
   for (int i = 0; i <= 400; i++)
   {
     md.setM1Speed(i); // Set speed for motor 1, speed is a number betwenn -400 and 400
-   // stopIfFault();
+   
     if (i%200 == 100)
     {
       Serial.print("M1 current: ");
@@ -42,7 +42,7 @@ void loop()
   for (int i = 400; i >= -400; i--)
   {
     md.setM1Speed(i); 
-    stopIfFault();
+    
     if (i%200 == 100)
     {
       Serial.print("M1 current: ");
@@ -54,7 +54,7 @@ void loop()
   for (int i = -400; i <= 0; i++)
   {
     md.setM1Speed(i);
-    stopIfFault();
+    
     if (i%200 == 100)
     {
       Serial.print("M1 current: ");
