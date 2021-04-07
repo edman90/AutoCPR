@@ -27,7 +27,7 @@ void loop()
   md.enableDrivers(); //enables the MOSFET drivers for  both M1 and M2
   delay(1);  // The drivers require a maximum of 1ms to elapse when brought out of sleep mode.
 
-  for (int i = 0; i <= 400; i++)
+ /* for (int i = 0; i <= 400; i++)
   {
     md.setM1Speed(i); // Set speed for motor 1, speed is a number betwenn -400 and 400
    
@@ -67,8 +67,10 @@ void loop()
       Serial.println(md.getM1CurrentMilliamps());
 	}
     delay(2);
-  }
+  } /*/
 
+analogWrite(_M1PWM, 255);
+delay(5);
   
 
 
